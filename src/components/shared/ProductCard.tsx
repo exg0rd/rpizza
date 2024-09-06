@@ -26,20 +26,20 @@ export const ProductCard: React.FC<ProductProps> = ({ product, className }) => {
     return (
         <div className={cn('', className)}>
             <Link href={`/product/${productId}`}>
-                <div className="justify-center p-6 bg-secondary rounded-lg h-[260px]">
+                <div className="justify-center bg-secondary rounded-lg">
                     <img
                         src={imageUrl}
                         alt={name}
-                        className="h-[220px] w-[220px] mb-1 object-contain"
+                        className="mb-4"
                     ></img>
                 </div>
-                <Title text={name} size="md" className="font-extrabold"></Title>
-                <p>{description}</p>
-                <div className="flex justify-between">
-                    <p className="font-extrabold mt-3">{price}$</p>
-                    <Button className="font-bold">Выбрать</Button>
-                </div>
             </Link>
+            <Title text={name} size="sm" className="font-bold"></Title>
+            <p className='h-1/2'>{description}</p>
+            <div className="flex justify-between mt-10">
+                <p className="font-extrabold">{price}$</p>
+                <Button className="font-bold">Выбрать</Button>
+            </div>
         </div>
     );
 };

@@ -82,3 +82,4 @@ export const CheckboxFiltersGroup: React.FC<Props> = ({
         </div>
     );
 };
+

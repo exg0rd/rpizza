@@ -18,15 +18,13 @@ export default function Home() {
             </Container>
             <Topbar></Topbar>
             <Container className="mt-10 pb-14">
-                <div className="flex flex-col md:flex-row gap-[20px]">
-                    <div className="w-[250px]">
+                <div className="flex flex-col md:flex-row gap-20">
+                    <div className="basis-1/6">
                         <Filters />
                     </div>
 
-                    <div>
-                        <div>
-                            <Products />
-                        </div>
+                    <div className='basis-5/6'>
+                        <Products />
                     </div>
                 </div>
             </Container>

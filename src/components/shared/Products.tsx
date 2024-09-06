@@ -10,12 +10,12 @@ export const Products: React.FC<Props> = ({ className }) => {
     const productsArray: Product[] = PizzaMockData;
 
     return (
-        <div className="mx-5 grid lg:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-5">
             {productsArray.map((product, index) => (
                 <ProductCard
                     key={product.productId}
                     product={product}
-                    className="shadow-md p-3 rounded-xl"
+                    className="flex flex-col shadow-md p-5 rounded-xl"
                 />
             ))}
         </div>
