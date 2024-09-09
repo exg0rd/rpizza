@@ -3,26 +3,17 @@ import React from 'react';
 import { Button } from '@/components/ui';
 import { cn } from '@/lib/utils';
 import { Title } from './Title';
-
-interface Props {
-    className?: string;
-}
-
-export interface Product {
-    productId: string;
-    imageUrl: string;
-    name: string;
-    price: number;
-    description: string;
-    type: string;
-}
-
-interface ProductProps extends Props {
-    product: Product;
-}
+import { Plus } from 'lucide-react';
+import { ProductProps } from '@/types/home';
 
 export const ProductCard: React.FC<ProductProps> = ({ product, className }) => {
-    const { productId, imageUrl, name, description, price } = product;
+    const { productId,
+        imageUrl,
+        name,
+        price,
+        description,
+        type,
+        ingredients } = product;
     return (
         <div className={cn('', className)}>
             <Link href={`/product/${productId}`}>
@@ -36,9 +27,12 @@ export const ProductCard: React.FC<ProductProps> = ({ product, className }) => {
             </Link>
             <Title text={name} size="sm" className="font-bold"></Title>
             <p className='h-1/2'>{description}</p>
-            <div className="flex justify-between mt-10">
-                <p className="font-extrabold">{price}$</p>
-                <Button className="font-bold">Выбрать</Button>
+            <div className="flex items-center justify-between mt-10">
+                <p className="font-extrabold">От {price}₽</p>
+                <Button variant="secondary" className="font-bold">
+                    <Plus size={20} className="mr-1"></Plus>
+                    Выбрать
+                </Button>
             </div>
         </div>
     );

@@ -9,4 +9,4 @@ export { Filters } from './Filters';
 export { RangeSlider } from './RangeSlider';
 export { CheckboxFiltersGroup } from './CheckboxFiltersGroup';
 export { ProductCard } from './ProductCard';
-export { Products } from './Products';
+export { ProductsGroupList } from './ProductsGroupList';
